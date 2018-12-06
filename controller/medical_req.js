@@ -1,8 +1,11 @@
 // medical endpoint
+const medical = require('../models/medical.js');
 
 
-const medical_add = (bdd, req, res) => {
+const medicalGet = (bdd, req, res) => {
     console.log(req.body);
+
+    var allMedicals = medical.getAll();
     let success = true;
     if (success) {
         res.send('{"statut":true}');
@@ -12,5 +15,5 @@ const medical_add = (bdd, req, res) => {
 }
 
 module.exports = {
-    medical_add: medical_add
+    medicalGet: medicalGet
 }

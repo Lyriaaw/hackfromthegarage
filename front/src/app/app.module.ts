@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import {MobileComponent} from './mobile/mobile.components';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material';
-import {StationDashboardComponent} from './desktop/station/dashboard.component';
+import {StationDashboardComponent} from './desktop/station/dashboard/dashboard.component';
 import {ControlDashboardComponent} from './desktop/control/dashboard.component';
 import {ApiService} from './services/api.service';
 import {HttpClientModule} from '@angular/common/http';

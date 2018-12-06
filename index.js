@@ -3,24 +3,27 @@ const bodyParser = require('body-parser');
 const medical = require('./controller/medical_req.js');
 const app = express();
 
-var database = null;
-
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true }));
-// ==> enables support for post requests
 
+var mysql = require('mysql');
 
-var orm = require('orm');
-
-orm.connect('mysql://root:toor@localhost/hackfromgarage2', function(err, db) {
-  if (err) {
-      return console.error('Connection error: ' + err);
-  }
-  database = db;
-  module.exports.database = database;
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "toor",
+  database: "hackfromgarage2"
 });
-app.post('/medical', (req, res)=>{
-    medical.medicalGet();
+
+con.connect(function(err) {
+  if (err) throw err;
+  console.log("connected to database");
+});
+
+module.exports.database = con;
+
+app.post('/medical', (req, res) => {
+    medical.getAllMedical(con, req, res);
 })
 
 app.listen(8080);

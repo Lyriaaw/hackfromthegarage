@@ -30,6 +30,9 @@ app.post('/medical/getbyid', (req, res) => {
     medical.getMedicalByID(con, req, res);
 })
 
+app.post('/medical/addmedical', (req, res) => {
+    medical.addMedical(con, req, res)
+})
 
 
 app.listen(8080);

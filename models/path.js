@@ -1,7 +1,7 @@
-const getAll = (con) => {
-    con.query("SELECT * FROM Path", function (err, result, fields) {
+const getAll = (con, callback) => {
+    con.query("SELECT * FROM Path",  (err, result, fields) =>{
         if (err) throw err;
-        return result;
+        callback(result);
     });
 }
 

@@ -1,4 +1,32 @@
 <div class="dashboard_station">
-  Dashboard Station Control
+  <div class="left">
+    <mat-card>
+      <mat-card-title>
+        Vitals
+      </mat-card-title>
+
+      <mat-card-content>
+        <div class="chart-container">
+          <canvas id="canvas1" height="50">{{ chart }}</canvas>
+        </div>
+      </mat-card-content>
+
+    </mat-card>
+    <mat-card>
+      <mat-card-title>
+        Weather
+      </mat-card-title>
+      <canvas id="canvas2" height="50">{{ chart }}</canvas>
+    </mat-card>
+    <mat-card>
+      <mat-card-title>
+        Objects
+      </mat-card-title>
+    </mat-card>
+  </div>
+  <div class="right">
+    <mat-card>Infos</mat-card>
+    <mat-card>Chat</mat-card>
+  </div>
 </div>
 

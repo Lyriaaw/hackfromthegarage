@@ -1,21 +1,17 @@
+var uuid4 = require('uuid4');
 
-
-class Medical {
-    constructor(db, uid, weight, timestamp, heartbeat, glycemia) {
-        this.db = db;
-        this.uid = uid;
-        this.weight = weight;
-        this.timestamp = timestamp;
-        this.heartbeat = heartbeat;
-        this.glycemia = glycemia;
-    }
-
+function addMedical(con, poids, timestamp, heartbeat, glycemia) {
+    var uuid = uuid4()
+    con.query("INSERT INTO Health()", function (err, result, fields) {
+        if (err) throw err;
+        return results;
+      });
 }
 
 function getAll(con) {
-    con.query("SELECT * FROM medical", function (err, result, fields) {
+    con.query("SELECT * FROM Health", function (err, result, fields) {
         if (err) throw err;
-        return results;
+        return result;
       });
 }
 

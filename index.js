@@ -22,8 +22,9 @@ con.connect(function(err) {
 
 module.exports.database = con;
 
-app.post('/medical', (req, res) => {
+app.post('/medical/getall', (req, res) => {
     medical.getAllMedical(con, req, res);
 })
+
 
 app.listen(8080);

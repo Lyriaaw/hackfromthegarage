@@ -3,14 +3,22 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import {StationDashboardComponent} from './desktop/station/dashboard.component';
+import {ControlDashboardComponent} from './desktop/control/dashboard.component';
+import {MobileComponent} from './mobile/mobile.components';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    StationDashboardComponent,
+    ControlDashboardComponent,
+    MobileComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,31 +3,22 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-const dbb;
-
+var database = null;
 
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true }));
 // ==> enables support for post requests
 
 
-const make_medical_request = (data) => {
+var orm = require('orm');
 
-}
-
-
-// medical endpoint
-app.post('/medical_api', (req, res)=>{
-    // ID
-    // UID
-    // Poids: float (en kilogramme)
-    // Timestamp: milliseconde
-    // Poux: int
-    // Glycémie: int
-    console.log(req.body);
-    res.send('');
+orm.connect('mysql://root:toor@localhost/hackfromgarage2', function(err, db) {
+  if (err) {
+      return console.error('Connection error: ' + err);
+  }
+  database = db;
+  module.exports.database = database;
 });
-
 
 
 app.listen(8080);

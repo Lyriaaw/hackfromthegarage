@@ -1,6 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const medical = require('./controller/medical_req.js');
+const path = require('./controller/path_req.js');
+
 const app = express();
 
 app.use(bodyParser.json()); 
@@ -34,5 +36,8 @@ app.post('/medical/addmedical', (req, res) => {
     medical.addMedical(con, req, res)
 })
 
+app.post('/path/add', (req, res) => {
+    path.addPath(con, req, res);
+})
 
 app.listen(8080);

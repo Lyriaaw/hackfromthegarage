@@ -40,4 +40,13 @@ app.post('/path/add', (req, res) => {
     path.addPath(con, req, res);
 })
 
+app.get('/path/getall', (req, res)=>{
+    path.getAllPath(con, req, res);
+})
+
+app.post('/path/getbyid', (req, res)=>{
+    path.getByIdPath(con , req, res);
+})
+
+
 app.listen(8080);

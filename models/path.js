@@ -12,10 +12,11 @@ const getById = (con, id) => {
     });
 }
 
-const add = (con, idPosition) => {
-    con.query("INSERT * FROM Meteo WHERE ID = " + id, function (err, result, fields) {
+const add = (con, idPosition, callback) => {
+    console.log(callback);
+    con.query("INSERT INTO Path (UID, idPosition) VALUES (?, ?)", [1, idPosition], function (err, result, fields) {
         if (err) throw err;
-        return result;
+        callback(result);
     });
 }
 

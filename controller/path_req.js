@@ -3,13 +3,13 @@ const path = require('../models/path.js');
 
 
 const getAllPath = (con, req, res)=>{
-    let data = path.getAll(con);
-    res.send(data);
+    path.getAll(con, data => res.send(JSON.stringify(data)));
 }
 
-const add = (conn, req, res)=> {
-    let data = path.add(con, req.id);
-    res.send(data);
+const add = (con, req, res)=> {
+    console.log(req.body);
+    path.add(con, req.body.id, data =>
+         res.send(JSON.stringify(data)));
 }
 
 const getByIdPath = (con, req, res) => {
@@ -19,7 +19,7 @@ const getByIdPath = (con, req, res) => {
 
 
 module.exports = {
-    getAllPath = getAllPath,
-    add = addPath,
-    getByIdPath = getAllPath
+    getAllPath : getAllPath,
+    addPath : add,
+    getByIdPath : getByIdPath
 }

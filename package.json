@@ -1,0 +1,19 @@
+{
+  "name": "hackfromthegarage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lyriaaw/hackfromthegarage.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lyriaaw/hackfromthegarage/issues"
+  },
+  "homepage": "https://github.com/Lyriaaw/hackfromthegarage#readme"
+}

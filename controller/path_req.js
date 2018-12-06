@@ -13,8 +13,7 @@ const add = (con, req, res)=> {
 }
 
 const getByIdPath = (con, req, res) => {
-    let data = path.getById(con, req.id);
-    res.send(data);
+    path.getById(con, req.body.id, data => res.send(JSON.stringify(data)));
 }
 
 

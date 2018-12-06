@@ -5,16 +5,15 @@ const getAll = (con) => {
     });
 }
 
-const getById = (con, id) => {
-    con.query("SELECT * FROM Meteo WHERE ID = " + id, function (err, result, fields) {
+const getById = (con, id, callback) => {
+    con.query("SELECT * FROM Path WHERE ID = ?", [id], function (err, result, fields) {
         if (err) throw err;
-        return result;
+        callback(result);
     });
 }
 
 const add = (con, idPosition, callback) => {
-    console.log(callback);
-    con.query("INSERT INTO Path (UID, idPosition) VALUES (?, ?)", [1, idPosition], function (err, result, fields) {
+    con.query("INSERT INTO Path (UID, idPosition) VALUES (?, ?)",[uuid(), idPosition],  (err, result, fields)=> {
         if (err) throw err;
         callback(result);
     });
@@ -22,7 +21,7 @@ const add = (con, idPosition, callback) => {
 
 
 module.exports = {
-    getAll : getAll,
-    getById : getById,
-    add : add
+    getAll: getAll,
+    getById: getById,
+    add: add
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : db
--- Généré le :  jeu. 06 déc. 2018 à 21:19
+-- Généré le :  jeu. 06 déc. 2018 à 21:27
 -- Version du serveur :  8.0.13
 -- Version de PHP :  7.2.8
 
@@ -35,7 +35,7 @@ CREATE TABLE `Health` (
   `timestamp` int(11) NOT NULL,
   `pulse` int(11) NOT NULL,
   `glycemia` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- --------------------------------------------------------
 
@@ -50,7 +50,7 @@ CREATE TABLE `Material` (
   `state` int(11) NOT NULL,
   `battery` int(11) NOT NULL,
   `idPosition` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- --------------------------------------------------------
 
@@ -61,11 +61,11 @@ CREATE TABLE `Material` (
 CREATE TABLE `Message` (
   `ID` int(11) NOT NULL,
   `UID` int(11) NOT NULL,
-  `texte` varchar(255) NOT NULL,
+  `texte` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `timestamp` int(11) NOT NULL,
-  `image` varchar(255) NOT NULL,
-  `sender` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `sender` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- --------------------------------------------------------
 
@@ -75,13 +75,13 @@ CREATE TABLE `Message` (
 
 CREATE TABLE `Meteo` (
   `ID` int(11) NOT NULL,
-  `UID` varchar(200) NOT NULL,
+  `UID` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `wind_speed` float NOT NULL,
   `hygrometry` int(11) NOT NULL,
   `temperature` float NOT NULL,
   `id_position` int(11) NOT NULL,
   `wind_orientation` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- --------------------------------------------------------
 
@@ -92,13 +92,13 @@ CREATE TABLE `Meteo` (
 CREATE TABLE `Mission` (
   `ID` int(11) NOT NULL,
   `UID` int(11) NOT NULL,
-  `name` varchar(200) NOT NULL,
+  `name` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `timestamp` int(11) NOT NULL,
-  `description` varchar(200) NOT NULL,
+  `description` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `idMeteo` int(11) NOT NULL,
   `idPath` int(11) NOT NULL,
   `IdHealth` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- --------------------------------------------------------
 
@@ -109,11 +109,11 @@ CREATE TABLE `Mission` (
 CREATE TABLE `Notification` (
   `ID` int(11) NOT NULL,
   `UID` int(11) NOT NULL,
-  `Name` varchar(200) NOT NULL,
-  `level` varchar(200) NOT NULL,
+  `Name` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `level` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `title` int(11) NOT NULL,
   `message` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- --------------------------------------------------------
 
@@ -125,7 +125,7 @@ CREATE TABLE `Path` (
   `ID` int(11) NOT NULL,
   `UID` int(11) NOT NULL,
   `idPosition` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf16 ROW_FORMAT=COMPACT;
 
 -- --------------------------------------------------------
 
@@ -138,7 +138,7 @@ CREATE TABLE `Position` (
   `UID` int(11) NOT NULL,
   `longitude` float NOT NULL,
   `latitude` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 --
 -- Index pour les tables déchargées

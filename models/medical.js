@@ -2,7 +2,7 @@ const orm = require("orm");
 const database = require("../index.js");
 
 
-var Person = db.define('person', {
+var Medical = db.define('person', {
     id:      {type: 'serial', key: true},
     uid:    {type: 'text'},
     weight: {type: 'text'},
@@ -11,9 +11,33 @@ var Person = db.define('person', {
     glycemia:     {type: 'number'}
   }, {
     methods : {
-      fullName: function() {
-        return this.name + ' ' + this.surname;
+      getUID: function() {
+        return this.uid;
+      },
+      getWeight: function() {
+          return this.weight;
+      },
+      getTimestamp: function() {
+          return this.timsetamp;
+      },
+      getHeartbeat: function() {
+        return this.heartbeat;
+      },
+      getGlycemia: function() {
+        return this.glycemia;
       }
     }
   });
+
+  
+  var getAll = function() {
+    Person.find({}, function(err, results) {
+        if (err) {
+            console.log(error);
+            throw err;
+        }
+        console.log(results);
+        return results;
+      });
+  }
 

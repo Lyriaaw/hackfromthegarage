@@ -1,0 +1,143 @@
+.container-to-do-list {
+   display: flex;
+   flex-direction: row;
+}
+    .todolist {
+        flex-basis: 40%;
+        height: 300px;
+        margin-top: 5%;
+        margin-left: 5%;
+        box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.1);
+        background-color: white;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+        .todolist > ul {
+            padding: 0;
+        }
+            .todolist > ul > li {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+
+
+
+
+.button-maps {
+    position: absolute;
+    top: 3%;
+    right: 34%;
+    width: 27%;
+    padding: 2%;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border-radius: 5px;
+    font-weight: 600;
+    border: none;
+}
+.button-maps:hover {
+    box-shadow: 0px 0px 4px 4px rgba(0,0,0,0.1);
+}
+
+.button-modal-alert {
+    position: absolute;
+    bottom: 2%;
+    left: 1%;
+    background-color: #FF6633;
+}
+.button-modal-alert {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+}
+.button-modal-alert:hover {
+    box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.1);
+}
+    .button-modal-alert > img {
+        width: 60%;
+    }
+
+.container-alert-modal {
+    height: auto !important;
+    height: 100%;
+    max-height: 200%;
+    min-height: 100%;
+    width: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    margin:0;
+    padding:0;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.card-head {
+    height: 40px;
+    background-color: #FFFFFF;
+    border-bottom: solid 1px rgba(0,0,0,0.4);
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    background: none;
+    border: none;
+}
+.close:hover,
+.close:focus {
+    color: #0009;
+    text-decoration: none;
+    cursor: pointer;
+}
+.card-modal {
+    background-color: #FFFFFF;
+    box-shadow: 2px 2px 1px 1px rgba(0,0,0,0.1);
+    height: 200px;
+    width: 60%;
+    border-color: rgba(0,0,0,0.1);
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 50%;
+}
+.info {
+    width: 60%;
+    background-color: rgb(16, 128, 16);
+    color: white;
+    font-weight: 800;
+    margin-left: 20%;
+    margin-top: 15%;
+}
+.alert {
+    width: 60%;
+    background-color: rgb(252, 185, 0);
+    color: white;
+    font-weight: 800;
+    margin-left: 20%;
+    margin-top: 2%;
+}
+.danger {
+    width: 60%;
+    background-color: rgb(196, 24, 24);
+    color: white;
+    font-weight: 800;
+    margin-left: 20%;
+    margin-top: 2%;
+}
+
+/*PAYSAGE*/
+@media only screen and (max-width : 768px) and (orientation: landscape){
+    .card-modal {
+        margin-top: 15%;
+    }
+    .info {
+        margin-top: 10%;
+    }
+}

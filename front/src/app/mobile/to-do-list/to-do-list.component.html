@@ -1,0 +1,48 @@
+<button class="button-maps" [routerLink]="['../maps']" >
+  Maps
+</button>
+<div *ngIf="switchMaps">
+  <app-mobile></app-mobile>
+</div>
+
+<div class="container-to-do-list">
+  <div class="todolist">
+    <ul>
+      <li>
+        <label>Finir la nuit de l'info réveiller</label>
+        <input type="checkbox">
+      </li>
+      <li>
+        <label>Finir la nuit de l'info réveiller</label>
+        <input type="checkbox">
+      </li>
+      <li>
+        <label>Finir la nuit de l'info réveiller</label>
+        <input type="checkbox">
+      </li>
+      <li>
+        <label>Finir la nuit de l'info réveiller</label>
+        <input type="checkbox">
+      </li>
+    </ul>
+  </div>
+  <div class="human">
+
+  </div>
+</div>
+
+<button (click)="openModalAlert()" class="button-modal-alert" color="primary">
+    <img src="../../assets/bell.png" alt="">
+</button>
+<div *ngIf="isOpenModal" class="container-alert-modal">
+  <div class="card-modal">
+      <div class="card-modal-head">
+          <button class="close" (click)="onClickClose()">&times;</button>
+      </div>
+      <div class="card-modal-text">
+          <button mat-raised-button class="info">INFORMATION</button>
+          <button mat-raised-button class="alert" >ALERT</button>
+          <button mat-raised-button class="danger">DANGER</button>
+      </div>
+    </div>
+</div>

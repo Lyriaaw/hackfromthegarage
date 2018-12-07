@@ -7,7 +7,7 @@ const notification = require('./controller/notification.js');
 const message = require('./controller/message.js');
 
 const materiel = require('./controller/materiel.js');
-
+const mission = require('./controller/mission_req.js');
 const app = express();
 
 app.use(bodyParser.json());
@@ -99,6 +99,16 @@ app.post('/position/getbyid', (req, res) => {
 })
 app.post('/position/add', (req, res)=>{
     position.addPosition(con, req, res);
+})
+
+app.get('/mission/getall', (req, res) => {
+    mission.getAllMission(con, req, res);
+})
+app.post('/mission/getbyid', (req, res) => {
+    mission.getMissionByID(con, req, res);
+})
+app.post('/mission/add', (req, res)=>{
+    mission.addMission(con, req, res);
 })
 
 app.listen(8080);

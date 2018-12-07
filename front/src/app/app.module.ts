@@ -11,18 +11,16 @@ import {StationDashboardComponent} from './desktop/station/dashboard/dashboard.c
 import {ApiService} from './services/api.service';
 import {HttpClientModule} from '@angular/common/http';
 import {MedicalService} from './services/medial.service';
-import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 
 import {MobileModule} from './mobile/mobile.module';
 
-import {AgmCoreModule} from '@agm/core';
+import { AgmCoreModule } from '@agm/core';
 import { FormsModule } from '@angular/forms';
 import { ToDoListComponent } from './mobile/to-do-list/to-do-list.component';
 import { MapsComponent } from './mobile/maps/maps.component';
 import {WebsocketService} from './services/websocket.service';
-import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -44,12 +42,10 @@ import {FormsModule} from '@angular/forms';
       apiKey: 'AIzaSyBu2MzhJLvkrA-BZgmynKvU-Qg5wOAmGM0'
     }),
     MatCardModule,
-    MatButtonModule,
     MatIconModule,
     MatDialogModule,
     MatInputModule,
     MatFormFieldModule,
-    FormsModule,
     MatButtonModule,
   ],
   providers: [

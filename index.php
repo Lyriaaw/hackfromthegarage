@@ -8,12 +8,13 @@ ob_start(); ?>
                 <h3>La démonstration</h3>
                 <div class="line"></div>
                 <br>
-                <a href="">Site de démonstration</a>
+                <a href="http://gogarage.luquf.me">Site de démonstration</a>
             </div>
         </div>
         <div class="col-8">
             <div class="text-center">
-                <iframe src="https://www.youtube.com/embed/sI-krAvAPLU" frameborder="0" class="video"></iframe>
+                <iframe src="https://www.youtube.com/embed/_DVj8ai3zGQ" frameborder="0" class="video">
+                </iframe>
             </div>
         </div>
     </div>

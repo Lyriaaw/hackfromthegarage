@@ -6,7 +6,7 @@ import {Observable} from 'rxjs/Observable';
 @Injectable()
 export class ApiService {
 
-  url = 'http://lysking-api.herokuapp.com';
+  url = 'https://cors-anywhere.herokuapp.com/http://4ad817cc.eu.ngrok.io';
 
   constructor(private http: HttpClient) { }
 

@@ -3,10 +3,10 @@ export class Medical {
   uid: string;
 
 
-  weight: number;
+  mass: number;
   timestamp: number;
   pulse: number;
-  glucose: number;
+  glycemia: number;
 
 
 }

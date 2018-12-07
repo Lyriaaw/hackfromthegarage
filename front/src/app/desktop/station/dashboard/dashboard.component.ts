@@ -26,29 +26,7 @@ export class StationDashboardComponent implements OnInit {
 
   loaded: boolean = false;
 
-  constructor(private apiService: ApiService, private socket: WebsocketService, private route: ActivatedRoute,) {
-    this.datas = [
-      {id: 1, uid: 'fezfz', weight: 70.2, timestamp: 1, pulse: 87, glucose: 0.05},
-      {id: 1, uid: 'fezfz', weight: 70.1, timestamp: 2, pulse: 83, glucose: 0.01},
-      {id: 1, uid: 'fezfz', weight: 70.3, timestamp: 3, pulse: 120, glucose: 0.03}
-    ];
-
-
-
-
-    this.socket.initSocket();
-
-    this.socket.onMessage().subscribe( message => {
-      console.log('Received message', message);
-      setTimeout(() => {
-        this.messages.push(message);
-      }, 10);
-      if (this.messages.length > 8) {
-        this.messages.shift();
-      }
-    });
-
-
+  constructor(private api: ApiService, private socket: WebsocketService, private route: ActivatedRoute,) {
 
   }
 
@@ -70,9 +48,20 @@ export class StationDashboardComponent implements OnInit {
     setTimeout(() => {
       this.origin = this.route.snapshot.paramMap.get('team');
     });
-    console.log('Origin', this.origin);
 
-    console.log(this.datas.map(data => data.weight));
+
+    this.api.get<Medical[]>('/medical/getall').subscribe((data: Medical[]) => {
+      console.log(data.map(m => m.mass));
+    });
+
+
+
+
+
+  }
+
+
+  loadComponents() {
 
     this.healthChart = new Chart('canvas1', {
       type: 'line',
@@ -140,21 +129,6 @@ export class StationDashboardComponent implements OnInit {
         }
       }
     });
-
-
-    this.message = {
-      text: '',
-      sender: this.origin,
-    };
-
-
-
-
-  }
-
-
-  loadComponents() {
-
   }
 
 }

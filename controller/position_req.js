@@ -1,5 +1,5 @@
 const postion = require('../models/position.js');
-
+const send = require('../base_send.js');
 const getAllPosition = (con, req, res) => {
     postion.getAll(con, data => res.send(JSON.stringify(data)));
 }

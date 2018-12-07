@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const medical = require('./controller/medical_req.js');
 const path = require('./controller/path_req.js');
 const position = require('./controller/position_req.js');
-const notification = require('./controller/notification_req.js');
+const notification = require('./controller/notification.js');
 const message = require('./controller/message.js');
 
 const materiel = require('./controller/materiel.js');

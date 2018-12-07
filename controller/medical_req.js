@@ -1,23 +1,22 @@
 // medical endpoint
 const medical = require('../models/medical.js');
-
+const send = require('../base_send.js');
 
 var getAllMedical = (db, req, res) => {
-    res.send(medical.getAll(db));
+    medical.getAll(db, data => send.send(data, res));
 }
 
-var getMedicalByID = function(db, req, res) {
+var getMedicalByID = function (db, req, res) {
     var id = req.body.id;
-    console.log(id)
-    var result = medical.getByID(db, id);
-    res.send(result);
-    
+    medical.getByID(db, id, data => send.send(data, res));
+
 }
 
-var addMedical = function(db, req, res) {
+var addMedical = function (db, req, res) {
     console.log(req.body.weight);
-    var result = medical.addMedical(db, req.body.weight, req.body.timestamp, req.body.heartbeat, req.body.glycemia);
-    res.send(result);
+    medical.addMedical(db, req.body.weight,
+        req.body.timestamp, req.body.heartbeat, req.body.glycemia, data=>send.send(data, res));
+
 }
 
 module.exports.getAllMedical = getAllMedical;

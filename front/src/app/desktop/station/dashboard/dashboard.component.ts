@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import {ApiService} from '../../../services/api.service';
 import {Medical} from '../../../models/medical';
 import { Chart } from 'chart.js';
+import {Message} from '../../../models/message';
+import {WebsocketService} from '../../../services/websocket.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-station-dashboard',
@@ -15,12 +18,53 @@ export class StationDashboardComponent {
   weatherChart = [];
   datas: Medical[] = [];
 
-  constructor(private apiService: ApiService) {
+  message: Message;
+
+  messages: Message[] = [];
+
+  origin: string;
+
+  constructor(private apiService: ApiService, private socket: WebsocketService, private route: ActivatedRoute,) {
     this.datas = [
       {id: 1, uid: 'fezfz', weight: 70.2, timestamp: 1, pulse: 87, glucose: 0.05},
       {id: 1, uid: 'fezfz', weight: 70.1, timestamp: 2, pulse: 83, glucose: 0.01},
       {id: 1, uid: 'fezfz', weight: 70.3, timestamp: 3, pulse: 120, glucose: 0.03}
     ];
+
+    this.origin = this.route.snapshot.paramMap.get('team');
+    this.message = {
+      text: '',
+      sender: this.origin,
+    }
+
+
+    this.socket.initSocket();
+
+    this.socket.onMessage().subscribe( message => {
+      console.log('Received message', message);
+      setTimeout(() => {
+        this.messages.push(message);
+      }, 10);
+      if (this.messages.length > 8) {
+        this.messages.shift();
+      }
+    });
+
+
+
+  }
+
+
+
+  chatAreaKeyPress(event) {
+    if (event.key === "Enter") {
+      this.socket.sendMessage(this.message);
+      this.message = {
+        text: '',
+        sender: this.origin,
+      }
+    }
+
   }
 
   ngOnInit() {

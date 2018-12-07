@@ -2,10 +2,10 @@
 -- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Hôte : db
--- Généré le :  jeu. 06 déc. 2018 à 21:32
--- Version du serveur :  8.0.13
--- Version de PHP :  7.2.8
+-- Hôte : localhost
+-- Généré le :  ven. 07 déc. 2018 à 01:19
+-- Version du serveur :  10.1.37-MariaDB
+-- Version de PHP :  7.2.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -30,12 +30,20 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `Health` (
   `ID` int(11) NOT NULL,
-  `UID` int(11) NOT NULL,
+  `UID` varchar(200) NOT NULL,
   `mass` float NOT NULL,
   `timestamp` int(11) NOT NULL,
   `pulse` int(11) NOT NULL,
   `glycemia` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+
+--
+-- Déchargement des données de la table `Health`
+--
+
+INSERT INTO `Health` (`ID`, `UID`, `mass`, `timestamp`, `pulse`, `glycemia`) VALUES
+(1, '0', 90, 1544132906, 35, 45),
+(2, '103', 95, 2147483647, 180, 45);
 
 -- --------------------------------------------------------
 
@@ -45,12 +53,19 @@ CREATE TABLE `Health` (
 
 CREATE TABLE `Material` (
   `ID` int(11) NOT NULL,
-  `UID` int(11) NOT NULL,
-  `name` int(11) NOT NULL,
-  `state` int(11) NOT NULL,
-  `battery` int(11) NOT NULL,
-  `idPosition` int(11) NOT NULL
+  `UID` varchar(200) NOT NULL,
+  `name` varchar(200) NOT NULL,
+  `state` varchar(200) NOT NULL,
+  `battery` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+
+--
+-- Déchargement des données de la table `Material`
+--
+
+INSERT INTO `Material` (`ID`, `UID`, `name`, `state`, `battery`) VALUES
+(1, '0', '0', '0', 68),
+(2, '2', '0', '0', 53);
 
 -- --------------------------------------------------------
 
@@ -60,12 +75,19 @@ CREATE TABLE `Material` (
 
 CREATE TABLE `Message` (
   `ID` int(11) NOT NULL,
-  `UID` int(11) NOT NULL,
-  `texte` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `UID` varchar(200) NOT NULL,
+  `texte` varchar(255) NOT NULL,
   `timestamp` int(11) NOT NULL,
-  `image` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `sender` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
+  `image` varchar(255) NOT NULL,
+  `sender` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+
+--
+-- Déchargement des données de la table `Message`
+--
+
+INSERT INTO `Message` (`ID`, `UID`, `texte`, `timestamp`, `image`, `sender`) VALUES
+(1, '0', 'text', 138465373, 'oheikuyfgjsuk7ryhkhejgjer', 'envoyeur');
 
 -- --------------------------------------------------------
 
@@ -75,11 +97,10 @@ CREATE TABLE `Message` (
 
 CREATE TABLE `Meteo` (
   `ID` int(11) NOT NULL,
-  `UID` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `UID` varchar(200) NOT NULL,
   `wind_speed` float NOT NULL,
   `hygrometry` int(11) NOT NULL,
   `temperature` float NOT NULL,
-  `id_position` int(11) NOT NULL,
   `wind_orientation` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
@@ -91,13 +112,10 @@ CREATE TABLE `Meteo` (
 
 CREATE TABLE `Mission` (
   `ID` int(11) NOT NULL,
-  `UID` int(11) NOT NULL,
-  `name` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `UID` varchar(200) NOT NULL,
+  `name` varchar(200) NOT NULL,
   `timestamp` int(11) NOT NULL,
-  `description` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `idMeteo` int(11) NOT NULL,
-  `idPath` int(11) NOT NULL,
-  `IdHealth` int(11) NOT NULL
+  `description` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- --------------------------------------------------------
@@ -108,12 +126,20 @@ CREATE TABLE `Mission` (
 
 CREATE TABLE `Notification` (
   `ID` int(11) NOT NULL,
-  `UID` int(11) NOT NULL,
-  `Name` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `level` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `title` int(11) NOT NULL,
-  `message` int(11) NOT NULL
+  `UID` varchar(200) NOT NULL,
+  `Name` varchar(200) NOT NULL,
+  `level` varchar(200) NOT NULL,
+  `title` varchar(200) NOT NULL,
+  `message` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+
+--
+-- Déchargement des données de la table `Notification`
+--
+
+INSERT INTO `Notification` (`ID`, `UID`, `Name`, `level`, `title`, `message`) VALUES
+(1, '0', 'name', 'WARNING', '0', '0'),
+(2, '0', 'test', 'DANGER', '0', '0');
 
 -- --------------------------------------------------------
 
@@ -123,8 +149,9 @@ CREATE TABLE `Notification` (
 
 CREATE TABLE `Path` (
   `ID` int(11) NOT NULL,
-  `UID` int(11) NOT NULL,
-  `idPosition` int(11) NOT NULL
+  `UID` varchar(200) NOT NULL,
+  `id_position` int(11) NOT NULL,
+  `id_misson` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf16 ROW_FORMAT=COMPACT;
 
 -- --------------------------------------------------------
@@ -135,7 +162,7 @@ CREATE TABLE `Path` (
 
 CREATE TABLE `Position` (
   `ID` int(11) NOT NULL,
-  `UID` int(11) NOT NULL,
+  `UID` varchar(200) NOT NULL,
   `longitude` float NOT NULL,
   `latitude` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
@@ -200,19 +227,19 @@ ALTER TABLE `Position`
 -- AUTO_INCREMENT pour la table `Health`
 --
 ALTER TABLE `Health`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `Material`
 --
 ALTER TABLE `Material`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `Message`
 --
 ALTER TABLE `Message`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `Meteo`
@@ -230,7 +257,7 @@ ALTER TABLE `Mission`
 -- AUTO_INCREMENT pour la table `Notification`
 --
 ALTER TABLE `Notification`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `Path`

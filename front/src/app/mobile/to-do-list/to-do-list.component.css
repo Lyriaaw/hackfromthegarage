@@ -31,6 +31,7 @@
         flex-direction: column;
         flex-wrap: wrap;
         overflow-y: scroll;
+        z-index: -1;
     }
         .todolist > ul {
             padding: 0;
@@ -150,6 +151,7 @@
     margin:0;
     padding:0;
     overflow: hidden;
+    z-index: 1000;
     background-color: rgba(0,0,0,0.5);
 }
 
@@ -236,6 +238,7 @@
         margin-top: 15%;
         margin-left: 10%;
         flex-basis: 80%;
+        z-index: -1;
     }
 
     .human-meteo {

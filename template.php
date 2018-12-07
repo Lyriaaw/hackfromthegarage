@@ -10,11 +10,9 @@
         } ?></title>
     <link rel="stylesheet" href="https://bootswatch.com/4/lumen/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="src/logo.png">
+<!--    <link rel="icon" href="src/logo.png">-->
     <script src="js/main.js" async defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>-->
-
 </head>
 <body>
 <body>
@@ -38,7 +36,7 @@
                 <a class="nav-link" id="about-tab" href="about.php" data-toggle="tab" role="tab">Qui sommes-nous</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="about-tab" href="lcl.php" data-toggle="tab" role="tab">Défi LCL</a>
+                <a class="nav-link" id="about-tab" href="defis.php" data-toggle="tab" role="tab">Défis</a>
             </li>
         </ul>
     </div>

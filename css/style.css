@@ -12,8 +12,10 @@ body {
 }
 
 .video {
-    width  : 70%;
-    height : auto;
+    margin        : 5px;
+    width         : 700px;
+    height        : 450px;
+    border-radius : 5px;
 }
 
 .card {
@@ -61,4 +63,31 @@ body {
 
 .img-linkedin {
     width : 35px;
+}
+
+.title {
+    padding-top : 50px;
+}
+
+.demo {
+    background-color : white;
+}
+
+.line {
+    margin-left   : 120px;
+    width         : 112px;
+    border-bottom : 1px solid black;
+    position      : absolute;
+}
+
+.presentation {
+    margin      : 10px 50px;
+    line-height : 40px;
+}
+
+.line-center {
+    margin-left   : 35%;
+    width         : 400px;
+    border-bottom : 1px solid black;
+    position      : absolute;
 }

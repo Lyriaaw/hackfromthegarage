@@ -9,7 +9,7 @@ import { MapsComponent } from './mobile/maps/maps.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'station/dashboard', pathMatch: 'full' },
-  {path: 'station/dashboard', component: StationDashboardComponent},
+    {path: ':team/dashboard', component: StationDashboardComponent},
   { path: 'station/mobile',
     children: [
       { path: '', component: MobileComponent},
@@ -18,6 +18,8 @@ const routes: Routes = [
     ]
   },
   { path: 'ground/dashboard', component: ControlDashboardComponent},
+  { path: '', redirectTo: 'station/dashboard', pathMatch: 'full' },
+  {path: ':team/dashboard', component: StationDashboardComponent},
 ];
 
 

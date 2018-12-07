@@ -6,9 +6,8 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import {MobileComponent} from './mobile/mobile.components';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatCardModule} from '@angular/material';
+import {MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule} from '@angular/material';
 import {StationDashboardComponent} from './desktop/station/dashboard/dashboard.component';
-import {ControlDashboardComponent} from './desktop/control/dashboard.component';
 import {ApiService} from './services/api.service';
 import {HttpClientModule} from '@angular/common/http';
 import {MedicalService} from './services/medial.service';
@@ -22,13 +21,14 @@ import {AgmCoreModule} from '@agm/core';
 import { FormsModule } from '@angular/forms';
 import { ToDoListComponent } from './mobile/to-do-list/to-do-list.component';
 import { MapsComponent } from './mobile/maps/maps.component';
+import {WebsocketService} from './services/websocket.service';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     StationDashboardComponent,
-    ControlDashboardComponent,
     MobileComponent,
     ToDoListComponent,
     MapsComponent,
@@ -47,10 +47,15 @@ import { MapsComponent } from './mobile/maps/maps.component';
     MatButtonModule,
     MatIconModule,
     MatDialogModule,
+    MatInputModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatButtonModule,
   ],
   providers: [
     ApiService,
     MedicalService,
+    WebsocketService,
   ],
   bootstrap: [AppComponent]
 })

@@ -50,6 +50,30 @@ app.post('/notification/add', (req, res) => {
     notification.addNotification(con, req, res)
 })
 
+app.post('/materiel/getall', (req, res) => {
+    materiel.getAllMateriel(con, req, res)
+}) 
+
+app.post('/materiel/getbyid', (req, res) => {
+    materiel.getMaterielByID(con, req, res)
+})
+
+app.post('/materiel/add', (req, res) => {
+    materiel.addMateriel(con, req, res)
+})
+
+app.post('/message/getall', (req, res) => {
+    message.getAllMessage(con, req, res)
+}) 
+
+app.post('/message/getbyid', (req, res) => {
+    message.getMessageByID(con, req, res)
+})
+
+app.post('/message/add', (req, res) => {
+    message.addMessage(con, req, res)
+})
+
 app.post('/path/add', (req, res) => {
     path.addPath(con, req, res);
 })

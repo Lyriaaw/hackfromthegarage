@@ -14,7 +14,7 @@ const getById = (con, id, callback) => {
 }
 
 const add = (con, wind_speed, hygrometry, temperature, wind_orientation, callback) => {
-    con.query("INSERT INTO (wind_speed, hygrometry, temperature, wind_orientation) VALUES (?,?,?,?)", [wind_speed, hygrometry, temperature, wind_orientation], (err, result, fields) => {
+    con.query("INSERT INTO Meteo (UID, wind_speed, hygrometry, temperature, wind_orientation) VALUES (?,?, ?, ?, ?);", [uuid(),wind_speed, hygrometry, temperature, wind_orientation], (err, result, fields) => {
         if (err) callback(err);
         callback(result);
     })

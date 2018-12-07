@@ -5,7 +5,7 @@ const path = require('./controller/path_req.js');
 const position = require('./controller/position_req.js');
 const notification = require('./controller/notification.js');
 const message = require('./controller/message.js');
-
+const meteo  = require('./controller/meteo_req.js');
 const materiel = require('./controller/materiel.js');
 const mission = require('./controller/mission_req.js');
 const app = express();
@@ -21,7 +21,7 @@ var con = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "toor",
-    database: "hackfromgarage2"
+    database: "garage"
 });
 
 con.connect(function (err) {
@@ -110,5 +110,13 @@ app.post('/mission/getbyid', (req, res) => {
 app.post('/mission/add', (req, res)=>{
     mission.addMission(con, req, res);
 })
-
+app.get('/meteo/getall', (req, res) => {
+    meteo.getAllMeteo(con, req, res);
+})
+app.post('/meteo/getbyid', (req, res) => {
+    meteo.getByidMeteo(con, req, res);
+})
+app.post('/meteo/add', (req, res)=>{
+    meteo.addMeteo(con, req, res);
+})
 app.listen(8080);

@@ -13,7 +13,6 @@ var getMedicalByID = function (db, req, res) {
 }
 
 var addMedical = function (db, req, res) {
-    console.log(req.body.mass);
     medical.addMedical(db, req.body.mass,
         req.body.timestamp, req.body.pulse, req.body.glycemia, data => send.send(data, res));
 

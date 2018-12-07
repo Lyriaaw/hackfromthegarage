@@ -1,10 +1,28 @@
-var uuid4 = require('uuid4');
+const uuid = require('uuid4');
 
-function getAll(con) {
-    con.query("SELECT * FROM Meteo", function (err, result, fields) {
-        if (err) throw err;
-        return result;
-      });
+const getAll = (con, callback) => {
+    con.query("SELECT * FROM Meteo", (err, result, fields) => {
+        if (err) callback(err);
+        callback(result);
+    });
+}
+const getById = (con, id, callback) => {
+    con.query("SELECT * FROM Meteo WHERE ID = ?", [id], (err, result, fields) => {
+        if (err) callback(err);
+        callback(result);
+    })
 }
 
-module.exports.getAll = getAll;
+const add = (con, wind_speed, hygrometry, temperature, wind_orientation, callback) => {
+    con.query("INSERT INTO (wind_speed, hygrometry, temperature, wind_orientation) VALUES (?,?,?,?)", [wind_speed, hygrometry, temperature, wind_orientation], (err, result, fields) => {
+        if (err) callback(err);
+        callback(result);
+    })
+}
+
+
+module.exports = {
+    getAll: getAll,
+    getById: getById,
+    add: add
+};

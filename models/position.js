@@ -15,7 +15,7 @@ const getById = (con, id, callback) => {
 const add = (con, longitude, latitude, callback) => {
     console.log(longitude);
     console.log(latitude);
-    con.query('INSERT INTO Position (UID, longitude, latitude) VALUES ("a", 1, 1);', (err, result, fields) => {
+    con.query('INSERT INTO Position (UID, longitude, latitude) VALUES (?, 1, 1);',[uuid()], (err, result, fields) => {
         if (err) {
             console.log(err);
             callback(err);

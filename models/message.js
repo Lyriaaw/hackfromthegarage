@@ -8,14 +8,14 @@ function addMessage(con, text, timestamp, image, sender, callback) {
       });
 }
 
-function getByID(con, id) {
+function getByID(con, id, callback) {
     con.query("SELECT * FROM Message WHERE ID=?", [id], function (err, result, fields) {
         if (err) callback("");
         callback(result);
       });
 }
 
-function getAll(con) {
+function getAll(con, callback) {
     con.query("SELECT * FROM Message", function (err, result, fields) {
         if (err) callback("");
         callback(result);

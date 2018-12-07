@@ -3,6 +3,11 @@ const bodyParser = require('body-parser');
 const medical = require('./controller/medical_req.js');
 const path = require('./controller/path_req.js');
 const position = require('./controller/position_req.js');
+const notification = require('./controller/notification_req.js');
+const message = require('./controller/message.js');
+
+const materiel = require('./controller/materiel.js');
+
 const app = express();
 
 app.use(bodyParser.json());
@@ -38,7 +43,7 @@ app.post('/medical/add', (req, res) => {
     medical.addMedical(con, req, res)
 })
 
-app.post('/notification/getall', (req, res) => {
+app.get('/notification/getall', (req, res) => {
     notification.getAllNotification(con, req, res)
 })
 
@@ -50,7 +55,7 @@ app.post('/notification/add', (req, res) => {
     notification.addNotification(con, req, res)
 })
 
-app.post('/materiel/getall', (req, res) => {
+app.get('/materiel/getall', (req, res) => {
     materiel.getAllMateriel(con, req, res)
 }) 
 
@@ -62,7 +67,7 @@ app.post('/materiel/add', (req, res) => {
     materiel.addMateriel(con, req, res)
 })
 
-app.post('/message/getall', (req, res) => {
+app.get('/message/getall', (req, res) => {
     message.getAllMessage(con, req, res)
 }) 
 

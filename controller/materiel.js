@@ -1,5 +1,6 @@
 const materiel = require("../models/materiel.js");
 const send = require("../base_send.js");
+
 var getAllMateriel = (db, req, res) => {
     materiel.getAll(db, data => send.send(data, res));
 }

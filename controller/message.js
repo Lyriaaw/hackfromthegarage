@@ -12,7 +12,8 @@ var getMessageByID = function (db, req, res) {
 }
 
 var addMessage = function (db, req, res) {
-    message.addMessage(db, req.body.text, req.body.timestamp, req.body.image, req.body.sender, data=> send.send(data, res));
+    message.addMessage(db, req.body.text, req.body.timestamp, req.body.image, req.body.sender, 
+        data => send.send(data, res));
 }
 
 module.exports.getAllMessage = getAllMessage;

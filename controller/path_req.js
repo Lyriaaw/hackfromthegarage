@@ -3,17 +3,17 @@ const path = require('../models/path.js');
 
 
 const getAllPath = (con, req, res) => {
-    path.getAll(con, data => 
+    path.getAll(con, data =>
         res.send(JSON.stringify(data)));
 }
 
 const add = (con, req, res) => {
-    path.add(con, req.body.id, data => 
+    path.add(con, req.body.id_position, req.body.id_mission, data =>
         res.send(JSON.stringify(data)));
 }
 
 const getByIdPath = (con, req, res) => {
-    path.getById(con, req.body.id, data => 
+    path.getById(con, req.body.id_position, req.body.id_mission, data =>
         res.send(JSON.stringify(data)));
 }
 

@@ -13,7 +13,8 @@ const getById = (con, id, callback) => {
 }
 
 const add = (con, idPosition, callback) => {
-    con.query("INSERT INTO Path (UID, idPosition) VALUES (?, ?)",[uuid(), idPosition],  (err, result, fields)=> {
+    con.query(  "INSERT INTO Path (UID, idPosition) VALUES (?, ?)",[uuid(), idPosition],  (err, result, fields)=> {
+                
         if (err) throw err;
         callback(result);
     });

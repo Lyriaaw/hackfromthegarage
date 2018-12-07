@@ -8,7 +8,7 @@ const getPositionById = (con, req, res) => {
 
 }
 const addPosition = (con, req, res) => {
-    postion.add(con, req.body.longitude, req.body.latitude, res, data => res.send(JSON.stringify(data)));
+    postion.add(con, req.body.longitude, req.body.latitude, data => res.send(JSON.stringify(data)));
 }
 
 module.exports = {

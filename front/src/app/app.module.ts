@@ -22,6 +22,8 @@ import { ToDoListComponent } from './mobile/to-do-list/to-do-list.component';
 import { MapsComponent } from './mobile/maps/maps.component';
 import {WebsocketService} from './services/websocket.service';
 import {ChatComponent} from './modules/chat/chat.component';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {ProgressBarModule} from "angular-progress-bar"
 
 
 @NgModule({
@@ -37,8 +39,10 @@ import {ChatComponent} from './modules/chat/chat.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatProgressBarModule,
     HttpClientModule,
     MobileModule,
+    ProgressBarModule,
     FormsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBu2MzhJLvkrA-BZgmynKvU-Qg5wOAmGM0'

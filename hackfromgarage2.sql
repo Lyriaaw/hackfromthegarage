@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  ven. 07 déc. 2018 à 01:19
+-- Généré le :  ven. 07 déc. 2018 à 02:25
 -- Version du serveur :  10.1.37-MariaDB
 -- Version de PHP :  7.2.13
 
@@ -42,8 +42,7 @@ CREATE TABLE `Health` (
 --
 
 INSERT INTO `Health` (`ID`, `UID`, `mass`, `timestamp`, `pulse`, `glycemia`) VALUES
-(1, '0', 90, 1544132906, 35, 45),
-(2, '103', 95, 2147483647, 180, 45);
+(1, '0', 90, 1544132906, 35, 45);
 
 -- --------------------------------------------------------
 
@@ -163,8 +162,8 @@ CREATE TABLE `Path` (
 CREATE TABLE `Position` (
   `ID` int(11) NOT NULL,
   `UID` varchar(200) NOT NULL,
-  `longitude` float NOT NULL,
-  `latitude` float NOT NULL
+  `longitude` int(11) NOT NULL,
+  `latitude` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 --

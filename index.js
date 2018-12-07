@@ -21,7 +21,7 @@ var con = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "toor",
-    database: "garage"
+    database: "hackfromgarage2"
 });
 
 con.connect(function (err) {

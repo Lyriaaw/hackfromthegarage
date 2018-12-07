@@ -12,7 +12,7 @@
   },
   "private": true,
   "dependencies": {
-    "@agm/core": "^1.0.0-beta.4",
+    "@agm/core": "^1.0.0-beta.3",
     "@angular/animations": "^5.2.0",
     "@angular/cdk": "^5.2.0",
     "@angular/common": "^5.2.0",
@@ -26,9 +26,9 @@
     "@angular/router": "^5.2.0",
     "chart.js": "^2.7.3",
     "core-js": "^2.4.1",
-    "rxjs-compat": "^6.3.3",
     "express": "^4.16.4",
     "rxjs": "^5.5.6",
+    "rxjs-compat": "^6.3.3",
     "socket.io": "^2.2.0",
     "zone.js": "^0.8.19"
   },

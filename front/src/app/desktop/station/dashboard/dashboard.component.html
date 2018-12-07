@@ -26,29 +26,7 @@
   </div>
   <div class="right">
     <mat-card>Infos</mat-card>
-    <mat-card class="chat">
-      <mat-card-title>
-        Chat
-      </mat-card-title>
-
-      <mat-card-content id="chat_messages">
-        <div class="message" *ngFor="let message of messages">
-          <h4>From : {{message.sender}}</h4>
-          <p>From : {{message.text}}</p>
-        </div>
-      </mat-card-content>
-
-
-      <mat-form-field>
-        <textarea matInput [(ngModel)]="message.text" (keypress)="chatAreaKeyPress($event)"></textarea>
-      </mat-form-field>
-
-
-
-
-
-
-    </mat-card>
+    <app-chat origin="{{origin}}"></app-chat>
   </div>
 </div>
 

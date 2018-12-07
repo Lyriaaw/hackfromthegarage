@@ -21,6 +21,7 @@ import { FormsModule } from '@angular/forms';
 import { ToDoListComponent } from './mobile/to-do-list/to-do-list.component';
 import { MapsComponent } from './mobile/maps/maps.component';
 import {WebsocketService} from './services/websocket.service';
+import {ChatComponent} from './modules/chat/chat.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import {WebsocketService} from './services/websocket.service';
     MobileComponent,
     ToDoListComponent,
     MapsComponent,
+    ChatComponent,
   ],
   imports: [
     BrowserModule,

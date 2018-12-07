@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ApiService} from '../../../services/api.service';
 import {Medical} from '../../../models/medical';
 import { Chart } from 'chart.js';
@@ -11,7 +11,7 @@ import {ActivatedRoute} from '@angular/router';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class StationDashboardComponent {
+export class StationDashboardComponent implements OnInit {
   title = 'Dashboard Station Control';
 
   healthChart = [];
@@ -31,11 +31,7 @@ export class StationDashboardComponent {
       {id: 1, uid: 'fezfz', weight: 70.3, timestamp: 3, pulse: 120, glucose: 0.03}
     ];
 
-    this.origin = this.route.snapshot.paramMap.get('team');
-    this.message = {
-      text: '',
-      sender: this.origin,
-    }
+
 
 
     this.socket.initSocket();
@@ -140,9 +136,19 @@ export class StationDashboardComponent {
 
 
 
+    this.origin = this.route.snapshot.paramMap.get('team');
+
+    console.log('Origin', this.origin);
+    
+    this.message = {
+      text: '',
+      sender: this.origin,
+    };
+
 
 
   }
+
 
   loadComponents() {
 

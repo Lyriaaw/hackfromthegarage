@@ -122,14 +122,16 @@ ob_start();
             </div>
         </div>
     </div>
+    <br>
     <div class="line-center"></div>
+    <br>
     <div class="row presentation text-center">
         <h4>L’équipe est organisée par des membres de GarageISEP. <br>Une association étudiante au sein de l’ISEP qui
             regroupe
             différents lab, comme IA Lab, Maker Lab, Cyber Lab, VR Lab, ou encore Coder Lab. Le nom du groupe est
             HackFromGarage2018.
         </h4>
-
+        <br>
     </div>
 <?php $body = ob_get_clean();
 require 'template.php'; ?>

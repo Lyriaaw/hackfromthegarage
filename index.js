@@ -32,8 +32,20 @@ app.post('/medical/getbyid', (req, res) => {
     medical.getMedicalByID(con, req, res);
 })
 
-app.post('/medical/addmedical', (req, res) => {
+app.post('/medical/add', (req, res) => {
     medical.addMedical(con, req, res)
+})
+
+app.post('/notification/getall', (req, res) => {
+    notification.getAllNotification(con, req, res)
+}) 
+
+app.post('/notification/getbyid', (req, res) => {
+    notification.getNotificationByID(con, req, res)
+})
+
+app.post('/notification/add', (req, res) => {
+    notification.addNotification(con, req, res)
 })
 
 app.post('/path/add', (req, res) => {

@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./mobile.component.css']
 })
 export class MobileComponent {
-  title = 'mobile';
+  
+
 }

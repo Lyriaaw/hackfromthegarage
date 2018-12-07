@@ -1,13 +1,18 @@
 const postion = require('../models/position.js');
 
-
-const getAllPosition = (db, req, res)=>{
-    res.send(postion.getAll());
+const getAllPosition = (con, req, res) => {
+    postion.getAll(con, data => res.send(JSON.stringify(data)));
 }
-const getPositionById = (db, req, res)=>{
-    let res = postion.getById(db, req.body.id);
-    res.send(res);
-}  
+const getPositionById = (con, req, res) => {
+    postion.getById(con, req.body.id, data => res.send(JSON.stringify(data)));
 
-module.exports.getAllPosition = getAllPosition;
-module.exports.getPositionById = getPositionById;
+}
+const addPosition = (con, req, res) => {
+    postion.add(con, req.body.longitude, req.body.latitude, res, data => res.send(JSON.stringify(data)));
+}
+
+module.exports = {
+    getAllPosition: getAllPosition,
+    getPositionById: getPositionById,
+    addPosition: addPosition
+}

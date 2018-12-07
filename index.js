@@ -4,6 +4,7 @@ const medical = require('./controller/medical_req.js');
 const path = require('./controller/path_req.js');
 const notification = require('./controller/notification.js');
 const materiel = require('./controller/materiel.js');
+const message = require('./controller/message.js');
 
 const app = express();
 
@@ -60,6 +61,18 @@ app.post('/materiel/getbyid', (req, res) => {
 
 app.post('/materiel/add', (req, res) => {
     materiel.addMateriel(con, req, res)
+})
+
+app.post('/message/getall', (req, res) => {
+    message.getAllMessage(con, req, res)
+}) 
+
+app.post('/message/getbyid', (req, res) => {
+    message.getMessageByID(con, req, res)
+})
+
+app.post('/message/add', (req, res) => {
+    message.addMessage(con, req, res)
 })
 
 app.post('/path/add', (req, res) => {

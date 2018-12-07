@@ -1,12 +1,29 @@
+.container {
+    background: #FAFAFA;
+    color: #333;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    height: auto !important;
+    height: 100%;
+    max-height: 200%;
+    min-height: 100%;
+    text-rendering: optimizeLegibility; /* Priviligie la lisibilité du text lors de changement d'écran.*/
+    width: 100%;
+    position: absolute;
+    margin:0;
+    overflow: hidden;
+    z-index: -10;
+}
+
 .container-to-do-list {
    display: flex;
    flex-direction: row;
 }
     .todolist {
-        flex-basis: 40%;
+ 
+        flex-basis: 45%;
         height: 300px;
-        margin-top: 5%;
-        margin-left: 5%;
+        margin-top: 10%;
+        margin-left: 2%;
         box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.1);
         background-color: white;
         border-radius: 5px;
@@ -19,9 +36,64 @@
         }
             .todolist > ul > li {
                 display: flex;
+                padding: 2%;
+                margin-bottom: 2%;
                 flex-direction: row;
                 flex-wrap: wrap;
             }
+            .todolist > ul > li > label {
+                margin-right: 2%;
+            }
+
+    .human-meteo {
+        flex-basis: 45%;
+        margin-left: 5%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 10%;
+
+    }
+        .human {
+            flex-basis: 48%;
+            box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.1);
+            background-color: white;
+            height: 150px;
+            margin-bottom: 2%;
+            border-radius: 4px;
+        }
+            .human > ul {
+                list-style-type: none;
+                padding: 0;
+            }
+                .human > ul > li  {
+                    text-align: center;
+                    text-align: -moz-center;
+                    font-size: 10px;
+
+                }
+                .progressbar {
+                    width: 60%;
+                }
+
+
+                
+        .meteo {
+            flex-basis: 50%;
+            box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.1);
+            background-color: white;
+            height: 150px;
+            border-radius: 4px;
+            text-align: center;
+            text-align: -moz-center;
+        }
+        .meteo > h2 {
+            margin-top: 2%;
+        }
+        .meteo > p {
+            font-size: 46px;
+            margin-top: 10%;
+        }
+        
 
 
 
@@ -141,3 +213,7 @@
         margin-top: 10%;
     }
 }
+
+.example-margin {
+    margin: 0 10px;
+  }

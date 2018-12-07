@@ -1,34 +1,30 @@
-<button class="button-to-do-list" [routerLink]="['../todolist']" *ngIf="switchMaps">
-    To Do List
-  </button>
-<div class="container-map" *ngIf="switchMaps">
-  <agm-map [latitude]="latitude" [longitude]="longitude">
-  </agm-map>
-</div>
-
-<div class="container-to-do-list" *ngIf="switchToDoList">
-  <app-to-do-list></app-to-do-list>
-</div>
-
-
-<button (click)="openModalAlert()" class="button-modal-alert" color="primary">
-    <img src="../../assets/bell.png" alt="">
-</button>
-<div *ngIf="isOpenModal" class="container-alert-modal">
-  <div class="card-modal">
-      <div class="card-modal-head">
-          <button class="close" (click)="onClickClose()">&times;</button>
-      </div>
-      <div class="card-modal-text">
-          <button mat-raised-button class="info">INFORMATION</button>
-          <button mat-raised-button class="alert" >ALERT</button>
-          <button mat-raised-button class="danger">DANGER</button>
-      </div>
+<div class="container">
+    <button class="button-to-do-list" [routerLink]="['../todolist']" *ngIf="switchMaps">
+        To Do List
+        </button>
+    <div class="container-map" *ngIf="switchMaps">
+        <agm-map [latitude]="latitude" [longitude]="longitude">
+        </agm-map>
+    </div>
+    
+    <div class="container-to-do-list" *ngIf="switchToDoList">
+        <app-to-do-list></app-to-do-list>
+    </div>
+    
+    
+    <button (click)="openModalAlert()" class="button-modal-alert" color="primary">
+        <img src="../../assets/bell.png" alt="">
+    </button>
+    <div *ngIf="isOpenModal" class="container-alert-modal">
+        <div class="card-modal">
+            <div class="card-modal-head">
+                <button class="close" (click)="onClickClose()">&times;</button>
+            </div>
+            <div class="card-modal-text">
+                <button mat-raised-button class="info">INFORMATION</button>
+                <button mat-raised-button class="alert" >ALERT</button>
+                <button mat-raised-button class="danger">DANGER</button>
+            </div>
+        </div>
     </div>
 </div>
-
-
-
-
-
-

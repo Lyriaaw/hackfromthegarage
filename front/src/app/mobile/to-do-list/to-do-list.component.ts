@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Time } from '@angular/common';
+import { Timestamp } from 'rxjs';
 
 @Component({
   selector: 'app-to-do-list',
@@ -9,10 +11,22 @@ export class ToDoListComponent  {
 
   switchMaps: boolean;
   isOpenModal: boolean;
+  value: number;
+  pulse: number;
+  glycemia: number;
+  weight: number;
+  today: string;
+  temperature: number;
 
   constructor() {
+    this.value = 50;
     this.isOpenModal = false;
     this.switchMaps = false;
+    this.glycemia = 20;
+    this.weight = 70;
+    this.pulse= 20;
+    this.today = "Lundi"
+    this.temperature = 70;
   }
 
   private openMaps(): void {

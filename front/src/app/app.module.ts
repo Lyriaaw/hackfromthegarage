@@ -23,6 +23,8 @@ import { MapsComponent } from './mobile/maps/maps.component';
 import {WebsocketService} from './services/websocket.service';
 import {ChatComponent} from './modules/chat/chat.component';
 import {MissionComponent} from './desktop/station/missions/missions.component';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {ProgressBarModule} from "angular-progress-bar"
 
 
 @NgModule({
@@ -39,8 +41,10 @@ import {MissionComponent} from './desktop/station/missions/missions.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatProgressBarModule,
     HttpClientModule,
     MobileModule,
+    ProgressBarModule,
     FormsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBu2MzhJLvkrA-BZgmynKvU-Qg5wOAmGM0'

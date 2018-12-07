@@ -31,7 +31,7 @@ con.connect(function (err) {
 
 module.exports.database = con;
 
-app.post('/medical/getall', (req, res) => {
+app.get('/medical/getall', (req, res) => {
     medical.getAllMedical(con, req, res);
 })
 

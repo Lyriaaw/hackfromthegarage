@@ -1,0 +1,37 @@
+.button-maps {
+    padding: 2%;
+    text-decoration-style: none;
+    border: solid 1px white;
+    border-radius: 5px;
+    background-color: rgba(F,F,F,0.4);
+    color: white;
+    font-weight: 600;
+    position: absolute;
+    top: 40%;
+    left: 28%;
+}
+
+.button-maps:hover {
+    background-color: rgba(0,0,0,0.4);
+    color: white;
+}
+
+.container {
+    background-image: url("../../assets/fusee.gif");
+    height: auto !important;
+    height: 100%;
+    max-height: 100%;
+    min-height: 100%;
+    text-rendering: optimizeLegibility; /* Priviligie la lisibilité du text lors de changement d'écran.*/
+    width: 100%;
+    position: absolute;
+    margin:0;
+    overflow: hidden;
+}
+
+.container > span {
+    position: sticky;
+    top: 29%;
+    left: 12%;
+    color: white;
+}

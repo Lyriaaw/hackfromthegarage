@@ -42,6 +42,9 @@
     echo $body;
 } ?>
 
+<footer class="footer text-center">
+    &#9400; 2018 Copyright
+</footer>
 </body>
 <footer class="footer text-center">
     &#9400; 2018 Copyright

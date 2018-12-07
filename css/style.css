@@ -1,6 +1,6 @@
 * {
-    font-size  : 18px;
-    box-sizing : border-box;
+    font-size : 18px;
+    /*border: 1px solid black;*/
 }
 
 body {
@@ -64,24 +64,6 @@ body {
     border-radius    : 50px;
 }
 
-.footer {
-    height           : 35px;
-    left             : 0;
-    bottom           : 0;
-    background-color : #ff6633;
-    color            : white;
-    font-size        : 26px;
-    width            : 100%;
-    opacity          : 0.95;
-    position         : fixed;
-}
-
-.container-fluid {
-    display         : flex;
-    padding         : 0 50px;
-    justify-content : center;
-}
-
 .img-linkedin {
     width : 35px;
 }
@@ -95,8 +77,8 @@ body {
 }
 
 .line {
-    margin-left   : 130px;
-    width         : 170px;
+    margin-left   : 120px;
+    width         : 112px;
     border-bottom : 1px solid black;
     position      : absolute;
 }

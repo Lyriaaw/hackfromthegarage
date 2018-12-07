@@ -122,7 +122,6 @@ ob_start();
             </div>
         </div>
     </div>
-    <br>
     <div class="line-center"></div>
     <br>
     <div class="row presentation text-center">

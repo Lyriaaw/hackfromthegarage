@@ -1,4 +1,4 @@
-.dashboard_station
+.app-station-missions
   display flex
   height 95vh
   width 98vw
@@ -7,15 +7,25 @@
   margin auto
   margin-top 1vh
 
+  mat-card
+    height 95%
+
   .left
     flex-basis 24%
     height 100%
 
-    display flex
-    flex-direction column
-
-    mat-card-content
-      height 30%
 
   .right
-    flex-basis 24%
+    flex-basis 74%
+
+    .container-map
+      width 100%
+      height 100%
+
+      agm-map
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+
+
+

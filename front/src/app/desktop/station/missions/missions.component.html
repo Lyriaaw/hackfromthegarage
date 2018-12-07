@@ -1,8 +1,16 @@
-<div class="dashboard_station">
+<div class="app-station-missions">
   <div class="left">
-    <h3>Missions</h3>
+    <mat-card>
+      <h3>Missions</h3>
+    </mat-card>
   </div>
   <div class="right">
+    <mat-card>
+      <div class="container-map">
+        <agm-map [latitude]="latitude" [longitude]="longitude">
+        </agm-map>
+      </div>
+    </mat-card>
   </div>
 </div>
 

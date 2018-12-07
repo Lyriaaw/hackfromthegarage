@@ -5,10 +5,12 @@ import {MobileComponent} from './mobile/mobile.components';
 import {StationDashboardComponent} from './desktop/station/dashboard/dashboard.component';
 import { ToDoListComponent } from './mobile/to-do-list/to-do-list.component';
 import { MapsComponent } from './mobile/maps/maps.component';
+import {MissionComponent} from './desktop/station/missions/missions.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'station/dashboard', pathMatch: 'full' },
     {path: ':team/dashboard', component: StationDashboardComponent},
+    {path: ':team/missions', component: MissionComponent},
   { path: 'station/mobile',
     children: [
       { path: '', component: MobileComponent},

@@ -1,0 +1,39 @@
+.chat_module {
+  height: 100%;
+}
+
+mat-card {
+  height: 100%;
+}
+
+
+.message {
+  padding: 10px 5px;
+}
+
+
+mat-form-field {
+  width: 100%;
+
+
+  border-top: 1px solid gray;
+  border-left: 1px solid gray;
+
+}
+
+
+
+
+mat-form-field > hr {
+  /*color : gray;*/
+}
+mat-card-content {
+  height: 80%;
+  overflow-y: auto;
+}
+.dashboard_station .right .app-chat mat-card-content div {
+  margin-bottom: 10px;
+}
+.dashboard_station .right .app-chat mat-form-field {
+  width: 100%;
+}

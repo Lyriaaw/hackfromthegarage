@@ -20,7 +20,7 @@ export class MapsComponent   {
   isOpenModal: boolean;
   switchToDoList: boolean;
   switchMaps: boolean;
-  
+
 
   constructor(public dialog: MatDialog) {
     this.switchMaps = true;

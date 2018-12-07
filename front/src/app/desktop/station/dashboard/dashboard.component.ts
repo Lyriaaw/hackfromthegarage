@@ -24,6 +24,8 @@ export class StationDashboardComponent implements OnInit {
 
   origin: string;
 
+  loaded: boolean = false;
+
   constructor(private apiService: ApiService, private socket: WebsocketService, private route: ActivatedRoute,) {
     this.datas = [
       {id: 1, uid: 'fezfz', weight: 70.2, timestamp: 1, pulse: 87, glucose: 0.05},
@@ -64,6 +66,11 @@ export class StationDashboardComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    setTimeout(() => {
+      this.origin = this.route.snapshot.paramMap.get('team');
+    });
+    console.log('Origin', this.origin);
 
     console.log(this.datas.map(data => data.weight));
 
@@ -135,15 +142,11 @@ export class StationDashboardComponent implements OnInit {
     });
 
 
-
-    this.origin = this.route.snapshot.paramMap.get('team');
-
-    console.log('Origin', this.origin);
-    
     this.message = {
       text: '',
       sender: this.origin,
     };
+
 
 
 

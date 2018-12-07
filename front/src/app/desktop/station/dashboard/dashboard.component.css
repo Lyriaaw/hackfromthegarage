@@ -21,16 +21,6 @@
   display: flex;
   flex-direction: column;
 }
-.dashboard_station .right .chat {
+.dashboard_station .right app-chat {
   height: 60vh;
-}
-.dashboard_station .right .chat mat-card-content {
-  height: 80%;
-  overflow-y: auto;
-}
-.dashboard_station .right .chat mat-card-content div {
-  margin-bottom: 10px;
-}
-.dashboard_station .right .chat mat-form-field {
-  width: 100%;
 }

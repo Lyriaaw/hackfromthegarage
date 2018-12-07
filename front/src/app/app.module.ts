@@ -22,6 +22,7 @@ import { ToDoListComponent } from './mobile/to-do-list/to-do-list.component';
 import { MapsComponent } from './mobile/maps/maps.component';
 import {WebsocketService} from './services/websocket.service';
 import {ChatComponent} from './modules/chat/chat.component';
+import {MissionComponent} from './desktop/station/missions/missions.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import {ChatComponent} from './modules/chat/chat.component';
     ToDoListComponent,
     MapsComponent,
     ChatComponent,
+    MissionComponent,
   ],
   imports: [
     BrowserModule,

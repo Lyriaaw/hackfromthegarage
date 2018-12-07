@@ -12,8 +12,8 @@ import {WebsocketService} from '../../../services/websocket.service';
 export class MissionComponent {
   title = 'Mission';
 
-
-
+  latitude: number = -24.533255;
+  longitude: number = 15.162674;
 
   constructor(private apiService: ApiService, private socket: WebsocketService) {
 

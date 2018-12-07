@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ApiService} from '../../services/api.service';
 import { Chart } from 'chart.js';
 import {Message} from '../../models/message';
@@ -10,7 +10,7 @@ import {ActivatedRoute} from '@angular/router';
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.css']
 })
-export class ChatComponent {
+export class ChatComponent implements OnInit {
   title = 'Chat';
 
 
@@ -21,12 +21,6 @@ export class ChatComponent {
   @Input() origin: string;
 
   constructor(private apiService: ApiService, private socket: WebsocketService, private route: ActivatedRoute,) {
-
-    this.message = {
-      text: '',
-      sender: this.origin,
-    };
-
 
     this.socket.initSocket();
 
@@ -41,13 +35,19 @@ export class ChatComponent {
     });
   }
 
+  ngOnInit() {
+    console.log('Loading for', this.origin);
+    this.message = {
+      text: '',
+    };
+
+  }
+
   chatAreaKeyPress(event) {
     if (event.key === "Enter") {
+      this.message.sender = this.origin.charAt(0).toUpperCase() + this.origin.slice(1);
       this.socket.sendMessage(this.message);
-      this.message = {
-        text: '',
-        sender: this.origin,
-      }
+      this.message.text = '';
     }
 
   }

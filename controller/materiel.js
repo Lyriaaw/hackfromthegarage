@@ -1,20 +1,18 @@
-var materiel = require("../models/materiel.js");
-
+const materiel = require("../models/materiel.js");
+const send = require("../base_send.js");
 var getAllMateriel = (db, req, res) => {
-    res.send(materiel.getAll(db));
+    materiel.getAll(db, data => send.send(data, res));
 }
 
-var getMaterielByID = function(db, req, res) {
+var getMaterielByID = function (db, req, res) {
     var id = req.body.id;
-    console.log(id)
-    var result = materiel.getByID(db, id);
-    res.send(result);
-    
+    materiel.getByID(db, id, data => send.send(data, res));
+
 }
 
-var addMateriel = function(db, req, res) {
-    var result = materiel.addMateriel(db, req.body.name, req.body.state, req.body.battery);
-    res.send(result);
+var addMateriel = function (db, req, res) {
+    materiel.addMateriel(db, req.body.name, req.body.state, req.body.battery,
+        data => send.send(data, res));
 }
 
 module.exports.getAllMateriel = getAllMateriel;

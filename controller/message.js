@@ -1,20 +1,18 @@
-var message = require("../models/message.js");
+const message = require("../models/message.js");
+const send = require("../base_send.js");
 
 var getAllMessage = (db, req, res) => {
-    res.send(message.getAll(db));
+    message.getAll(db, data => send.send(data, res));
 }
 
-var getMessageByID = function(db, req, res) {
+var getMessageByID = function (db, req, res) {
     var id = req.body.id;
-    console.log(id)
-    var result = message.getByID(db, id);
-    res.send(result);
-    
+    message.getByID(db, id, data => send.send(data, res));
+
 }
 
-var addMessage = function(db, req, res) {
-    var result = message.addMessage(db, req.body.text, req.body.timestamp, req.body.image, req.body.sender);
-    res.send(result);
+var addMessage = function (db, req, res) {
+    message.addMessage(db, req.body.text, req.body.timestamp, req.body.image, req.body.sender, data=> send.send(data, res));
 }
 
 module.exports.getAllMessage = getAllMessage;

@@ -1,21 +1,19 @@
 const notification = require('../models/notification.js');
-
+const send = require("../base_send.js");
 
 var getAllNotification = (db, req, res) => {
-    res.send(notification.getAll(db));
+    notification.getAll(db, data => send.send(data, res));
 }
 
-var getNotificationByID = function(db, req, res) {
+var getNotificationByID = function (db, req, res) {
     var id = req.body.id;
-    console.log(id)
-    var result = notification.getNotificationByID(db, id);
-    res.send(result);
-    
+    notification.getNotificationByID(db, id, data => send.send(data, res));
+
 }
 
-var addNotification = function(db, req, res) {
-    var result = notification.addNotification(db, req.body.name, req.body.level, req.body.title, req.body.message);
-    res.send(result);
+var addNotification = function (db, req, res) {
+    notification.addNotification(db, req.body.name, req.body.level, req.body.title, req.body.message,
+        data => send.send(data, res));
 }
 
 module.exports.getAllNotification = getAllNotification;

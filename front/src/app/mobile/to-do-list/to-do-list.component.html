@@ -25,6 +25,18 @@
           <label>Finir la nuit de l'info réveiller</label>
           <input type="checkbox">
         </li>
+        <li>
+          <label>Finir la nuit de l'info réveiller</label>
+          <input type="checkbox">
+        </li>
+        <li>
+          <label>Finir la nuit de l'info réveiller</label>
+          <input type="checkbox">
+        </li>
+        <li>
+          <label>Finir la nuit de l'info réveiller</label>
+          <input type="checkbox">
+        </li>
       </ul>
     </div>
     <div class="human-meteo">
@@ -61,16 +73,18 @@
   <button (click)="openModalAlert()" class="button-modal-alert" color="primary">
       <img src="../../assets/bell.png" alt="">
   </button>
-  <div *ngIf="isOpenModal" class="container-alert-modal">
+
+  <div *ngIf="isOpenModal && !isClickButton " class="container-alert-modal">
     <div class="card-modal">
         <div class="card-modal-head">
             <button class="close" (click)="onClickClose()">&times;</button>
         </div>
         <div class="card-modal-text">
-            <button mat-raised-button class="info">INFORMATION</button>
-            <button mat-raised-button class="alert" >ALERT</button>
-            <button mat-raised-button class="danger">DANGER</button>
+            <button mat-raised-button class="info" (click)="onClickInformation()" [routerLink]="['../chat-mobil']">INFORMATION</button>
+            <button mat-raised-button class="alert" (click)="onClickAlert()" [routerLink]="['../chat-mobil']">ALERT</button>
+            <button mat-raised-button class="danger" (click)="onClickDanger()" [routerLink]="['../chat-mobil']">DANGER</button>
         </div>
-      </div>
-  </div>    
+    </div>
+  </div>
+  
 </div>

@@ -3,7 +3,7 @@ import * as socketIo from 'socket.io-client';
 import {Message} from '../models/message';
 import {Observable} from 'rxjs/Observable';
 
-const SERVER_URL = 'http://127.0.0.1:3000';
+const SERVER_URL = '127.0.0.1:3000';
 
 @Injectable()
 export class WebsocketService {
@@ -21,7 +21,6 @@ export class WebsocketService {
       this.socket.on('message', (data: Message) => observer.next(data));
     });
   }
-
 
 
   public onAny(): Observable<any> {

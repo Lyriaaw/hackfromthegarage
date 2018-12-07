@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {MatDialog} from '@angular/material';
+import { AgmMap} from '@agm/core/directives'
 
 export interface DialogData {
   animal: string;
@@ -16,6 +17,7 @@ export class MapsComponent   {
   title: string = 'My first AGM project';
   latitude: number = -24.533255;
   longitude: number = 15.162674;
+  streetViewControlOptions:  boolean = true;
 
   isOpenModal: boolean;
   switchToDoList: boolean;

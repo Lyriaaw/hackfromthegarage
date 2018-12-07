@@ -71,7 +71,7 @@ export class StationDashboardComponent implements OnInit {
         labels: this.datas.map(data => data.timestamp),
         datasets: [
           {
-            data: this.datas.map(data => data.weight),
+            data: this.datas.map(data => data.mass),
             borderColor: '#3cba9f',
             fill: false
           },
@@ -104,7 +104,7 @@ export class StationDashboardComponent implements OnInit {
         labels: this.datas.map(data => data.timestamp),
         datasets: [
           {
-            data: this.datas.map(data => data.weight),
+            data: this.datas.map(data => data.mass),
             borderColor: '#3cba9f',
             fill: false
           },

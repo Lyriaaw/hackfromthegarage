@@ -21,6 +21,6 @@ const add = (con, longitude, latitude, callback) => {
 
 module.exports = {
     getAll: getAll,
-    getById:getById,
-    add:add
+    getById: getById,
+    add: add
 }

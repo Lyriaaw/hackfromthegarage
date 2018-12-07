@@ -8,7 +8,7 @@ ob_start(); ?>
                 <h3>La démonstration</h3>
                 <div class="line"></div>
                 <br>
-                <a href="">Site de démonstration</a>
+                <a href="http://gogarage.luquf.me">Site de démonstration</a>
             </div>
         </div>
         <div class="col-8">
